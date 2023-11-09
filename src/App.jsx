@@ -4,15 +4,14 @@ import SearchBar from './components/SearchBar'
 import MovieCard from './components/MovieCard'
 
 const App = () => {
-  const [allMovieData, setallMovieData] = useState(second);
-  const [searchMovie, setSearchMovie] = useState(second);
 
-
-  const [loading, setLoading] = useState(second);
+  const [allMovieData, setAllMovieData] = useState([]);
+  const [searchMovie, setSearchMovie] = useState('');
+  const [loading, setLoading] = useState(false);
 
   // api calling 
   // s vaiable as liya use horah ha osy movie name sya serch hoga or osko serachmovie kay use state mae store kardiay ha  
-  const movieData = async () => {
+  const fetchMovieData = async () => {
     try {
       const res = await fetch(`https://omdbapi.com/?s=${searchMovie}&apikey=a1de9`)
 
@@ -34,8 +33,18 @@ const App = () => {
     <div>
       <Navbar />
       <div className="bg">
-        <SearchBar />
-        <MovieCard />
+
+        {/* prob passing */}
+        <SearchBar searchMovie={searchMovie}
+          setSearchMovie={setSearchMovie}
+          fetchMovieData={fetchMovieData}
+
+        />
+
+        {/* probpassing  */}
+        <MovieCard allMovieData={allMovieData}
+          loading={loading}
+        />
       </div>
     </div>
   )
