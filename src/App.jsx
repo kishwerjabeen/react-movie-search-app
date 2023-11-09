@@ -7,8 +7,10 @@ const App = () => {
   return (
     <div>
       <Navbar/>
+      <div className="bg">
       <SearchBar/>
       <MovieCard/>
+      </div>
     </div>
   )
 }
