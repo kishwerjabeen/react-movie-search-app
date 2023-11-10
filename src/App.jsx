@@ -13,13 +13,17 @@ const App = () => {
   // s vaiable as liya use horah ha osy movie name sya serch hoga or osko serachmovie kay use state mae store kardiay ha  
   const fetchMovieData = async () => {
     try {
-      const res = await fetch(`https://omdbapi.com/?s=${searchMovie}&apikey=a1de9`)
+      setLoading(true);
+      // const res = await fetch(`https://omdbapi.com/?s=${searchMovie}&apikey=a1de9`)
+      const res = await fetch(`http://www.omdbapi.com/?s=${searchMovie}&apikey=91976021`)
+
 
       // api ka sara data json mae data mae ajye ga 
       const data = await res.json();
 
       // send data to set all movie data 
-      setallMovieData(data);
+      setAllMovieData(data.Search);
+      console.log(data);
 
       setLoading(false)
     }
@@ -37,6 +41,7 @@ const App = () => {
         {/* prob passing */}
         <SearchBar searchMovie={searchMovie}
           setSearchMovie={setSearchMovie}
+
           fetchMovieData={fetchMovieData}
 
         />
