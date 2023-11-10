@@ -14,7 +14,7 @@ function SearchBar({searchMovie, setSearchMovie,fetchMovieData}) {
         />
         <button
         onClick={fetchMovieData}
-          className='bg-[#40407a] px-4 rounded-r-lg text-white shadow-md 
+          className='bg-[#FF7676] px-4 rounded-r-lg text-white shadow-md 
           border-b-2 border-r-2 border-t-2 border-gray-500 '>
           Search
         </button>
