@@ -19,7 +19,7 @@ const MovieCard = ({ allMovieData, loading }) => {
                 <h2 className='text-lg text-white mb-2'>Year : {Year}</h2>
               </div>
             </div>
-          )
+          );
 
         })}
       </div>
